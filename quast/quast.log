@@ -1,0 +1,160 @@
+/home/exouser/Documents/Tools/quast/quast.py -r mpox_refgenome.fasta run_25_velvet/contigs.fa run_25_spades/contigs.fasta run_25_unicycler/run_25_unicycler_contigs.fasta
+
+Version: 5.2.0
+
+System information:
+  OS: Linux-5.15.0-58-generic-x86_64-with-glibc2.35 (linux_64)
+  Python version: 3.10.6
+  CPUs number: 8
+
+Started: 2023-03-03 04:57:27
+
+Logging to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/quast.log
+NOTICE: Maximum number of threads is set to 2 (use --threads option to set it manually)
+
+CWD: /home/exouser/Documents/Midterm1/Q2
+Main parameters: 
+  MODE: default, threads: 2, min contig length: 500, min alignment length: 65, min alignment IDY: 95.0, \
+  ambiguity: one, min local misassembly length: 200, min extensive misassembly length: 1000
+
+Reference:
+  /home/exouser/Documents/Midterm1/Q2/mpox_refgenome.fasta ==> mpox_refgenome
+
+Contigs:
+  Pre-processing...
+  1  run_25_velvet/contigs.fa ==> run_25_velvet_contigs
+  2  run_25_spades/contigs.fasta ==> run_25_spades_contigs
+  3  run_25_unicycler/run_25_unicycler_contigs.fasta ==> run_25_unicycler_contigs
+
+2023-03-03 04:57:28
+Running Basic statistics processor...
+  Reference genome:
+    mpox_refgenome.fasta, length = 197205, num fragments = 1, GC % = 33.00
+  Contig files: 
+    1  run_25_velvet_contigs
+    2  run_25_spades_contigs
+    3  run_25_unicycler_contigs
+  Calculating N50 and L50...
+    1  run_25_velvet_contigs, N50 = 10045, L50 = 7, auN = 8902.8, Total length = 161492, GC % = 33.26, # N's per 100 kbp =  6.19
+    2  run_25_spades_contigs, N50 = 10045, L50 = 7, auN = 10050.1, Total length = 179079, GC % = 33.06, # N's per 100 kbp =  0.00
+    3  run_25_unicycler_contigs, N50 = 2539, L50 = 19, auN = 2846.4, Total length = 139556, GC % = 32.88, # N's per 100 kbp =  0.00
+  Drawing Nx plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/Nx_plot.pdf
+  Drawing NGx plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/NGx_plot.pdf
+  Drawing cumulative plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/cumulative_plot.pdf
+  Drawing GC content plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/GC_content_plot.pdf
+  Drawing run_25_velvet_contigs GC content plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/run_25_velvet_contigs_GC_content_plot.pdf
+  Drawing run_25_spades_contigs GC content plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/run_25_spades_contigs_GC_content_plot.pdf
+  Drawing run_25_unicycler_contigs GC content plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/run_25_unicycler_contigs_GC_content_plot.pdf
+  Drawing Coverage histogram (bin size: 34x)...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/coverage_histogram.pdf
+  Drawing run_25_velvet_contigs coverage histogram (bin size: 62x)...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/run_25_velvet_contigs_coverage_histogram.pdf
+  Drawing run_25_spades_contigs coverage histogram (bin size: 32x)...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/basic_stats/run_25_spades_contigs_coverage_histogram.pdf
+Done.
+
+2023-03-03 04:57:29
+Running Contig analyzer...
+  1  run_25_velvet_contigs
+  2  run_25_spades_contigs
+  1  Logging to files /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/contigs_reports/contigs_report_run_25_velvet_contigs.stdout and contigs_report_run_25_velvet_contigs.stderr...
+  1  Aligning contigs to the reference
+  2  Logging to files /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/contigs_reports/contigs_report_run_25_spades_contigs.stdout and contigs_report_run_25_spades_contigs.stderr...
+  2  Aligning contigs to the reference
+  1  /home/exouser/Documents/Tools/quast/quast_libs/minimap2/minimap2 -c -x asm10 \
+     -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ \
+     200 -g 2500 --score-N 2 --cs -t 1 quast_results/results_2023_03_03_04_57_27/quast_corrected_input/mpox_refgenome.fasta \
+     quast_results/results_2023_03_03_04_57_27/quast_corrected_input/run_25_velvet_contigs.fa \
+     > quast_results/results_2023_03_03_04_57_27/contigs_reports/minimap_output/run_25_velvet_contigs.coords_tmp \
+     2>> quast_results/results_2023_03_03_04_57_27/contigs_reports/contigs_report_run_25_velvet_contigs.stderr
+  2  /home/exouser/Documents/Tools/quast/quast_libs/minimap2/minimap2 -c -x asm10 \
+     -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ \
+     200 -g 2500 --score-N 2 --cs -t 1 quast_results/results_2023_03_03_04_57_27/quast_corrected_input/mpox_refgenome.fasta \
+     quast_results/results_2023_03_03_04_57_27/quast_corrected_input/run_25_spades_contigs.fasta \
+     > quast_results/results_2023_03_03_04_57_27/contigs_reports/minimap_output/run_25_spades_contigs.coords_tmp \
+     2>> quast_results/results_2023_03_03_04_57_27/contigs_reports/contigs_report_run_25_spades_contigs.stderr
+  1  Analysis is finished.
+
+  3  run_25_unicycler_contigs
+  3  Logging to files /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/contigs_reports/contigs_report_run_25_unicycler_contigs.stdout and contigs_report_run_25_unicycler_contigs.stderr...
+  3  Aligning contigs to the reference
+  3  /home/exouser/Documents/Tools/quast/quast_libs/minimap2/minimap2 -c -x asm10 \
+     -B5 -O4,16 --no-long-join -r 200 -N 50 -s 65 -z 200 --mask-level 0.9 --min-occ \
+     200 -g 2500 --score-N 2 --cs -t 1 quast_results/results_2023_03_03_04_57_27/quast_corrected_input/mpox_refgenome.fasta \
+     quast_results/results_2023_03_03_04_57_27/quast_corrected_input/run_25_unicycler_contigs.fasta \
+     > quast_results/results_2023_03_03_04_57_27/contigs_reports/minimap_output/run_25_unicycler_contigs.coords_tmp \
+     2>> quast_results/results_2023_03_03_04_57_27/contigs_reports/contigs_report_run_25_unicycler_contigs.stderr
+  2  Analysis is finished.
+
+  3  Analysis is finished.
+
+  Creating total report...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/contigs_reports/misassemblies_report.txt, misassemblies_report.tsv, and misassemblies_report.tex
+  Transposed version of total report...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/contigs_reports/transposed_report_misassemblies.txt, transposed_report_misassemblies.tsv, and transposed_report_misassemblies.tex
+  Creating total report...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/contigs_reports/unaligned_report.txt, unaligned_report.tsv, and unaligned_report.tex
+  Drawing misassemblies by types plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/contigs_reports/misassemblies_plot.pdf
+  Drawing misassemblies FRCurve plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/contigs_reports/misassemblies_frcurve_plot.pdf
+Done.
+
+2023-03-03 04:57:30
+Running NA-NGA calculation...
+  1  run_25_velvet_contigs, Largest alignment = 17457, NA50 = 10045, NGA50 = 5732, LA50 = 7, LGA50 = 9
+  2  run_25_spades_contigs, Largest alignment = 18288, NA50 = 10045, NGA50 = 9294, LA50 = 7, LGA50 = 8
+  3  run_25_unicycler_contigs, Largest alignment = 5867, NA50 = 2539, NGA50 = 1932, LA50 = 19, LGA50 = 32
+  Drawing cumulative plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/aligned_stats/cumulative_plot.pdf
+  Drawing NAx plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/aligned_stats/NAx_plot.pdf
+  Drawing NGAx plot...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/aligned_stats/NGAx_plot.pdf
+Done.
+
+2023-03-03 04:57:30
+Running Genome analyzer...
+  NOTICE: No file with genomic features were provided. Use the --features option if you want to specify it.
+
+  NOTICE: No file with operons were provided. Use the -O option if you want to specify it.
+  2  run_25_spades_contigs
+  1  run_25_velvet_contigs
+  1  Analysis is finished.
+  3  run_25_unicycler_contigs
+  2  Analysis is finished.
+  3  Analysis is finished.
+  Drawing Genome fraction, % histogram...
+    saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/genome_stats/genome_fraction_histogram.pdf
+Done.
+
+NOTICE: Genes are not predicted by default. Use --gene-finding or --glimmer option to enable it.
+
+2023-03-03 04:57:30
+Creating large visual summaries...
+This may take a while: press Ctrl-C to skip this step..
+  1 of 2: Creating PDF with all tables and plots...
+  2 of 2: Creating Icarus viewers...
+Done
+
+2023-03-03 04:57:32
+RESULTS:
+  Text versions of total report are saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/report.txt, report.tsv, and report.tex
+  Text versions of transposed total report are saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/transposed_report.txt, transposed_report.tsv, and transposed_report.tex
+  HTML version (interactive tables and plots) is saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/report.html
+  PDF version (tables and plots) is saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/report.pdf
+  Icarus (contig browser) is saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/icarus.html
+  Log is saved to /home/exouser/Documents/Midterm1/Q2/quast_results/results_2023_03_03_04_57_27/quast.log
+
+Finished: 2023-03-03 04:57:32
+Elapsed time: 0:00:05.699294
+NOTICEs: 4; WARNINGs: 0; non-fatal ERRORs: 0
+
+Thank you for using QUAST!
