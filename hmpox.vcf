@@ -1,0 +1,40 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##bcftoolsVersion=1.16+htslib-1.16
+##bcftoolsCommand=mpileup -f mpox_refgenome.fasta ERR10123848.sorted.bam ERR10123851.sorted.bam ERR9769173.sorted.bam ERR9769174.sorted.bam ERR9880850.sorted.bam
+##reference=file://mpox_refgenome.fasta
+##contig=<ID=Monkeypox,length=197205>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of raw reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of raw reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Read Position Bias (closer to 0 is better)">
+##INFO=<ID=MQBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Mapping Quality Bias (closer to 0 is better)">
+##INFO=<ID=BQBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Base Quality Bias (closer to 0 is better)">
+##INFO=<ID=MQSBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Mapping Quality vs Strand Bias (closer to 0 is better)">
+##INFO=<ID=NMBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Number of Mismatches within supporting reads (closer to 0 is better)">
+##INFO=<ID=SCBZ,Number=1,Type=Float,Description="Mann-Whitney U-z test of Soft-Clip Length Bias (closer to 0 is better)">
+##INFO=<ID=FS,Number=1,Type=Float,Description="Phred-scaled p-value using Fisher's exact test to detect strand bias">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric.">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.16+htslib-1.16
+##bcftools_callCommand=call -mv -Ov --ploidy-file samples.ploidy -o Kharrat_hmpox.bcf; Date=Thu Mar  2 06:42:53 2023
+##bcftools_viewVersion=1.16+htslib-1.16
+##bcftools_viewCommand=view Kharrat_hmpox.bcf; Date=Thu Mar  2 06:43:14 2023
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	ERR10123848.sorted.bam	ERR10123851.sorted.bam	ERR9769173.sorted.bam	ERR9769174.sorted.bam	ERR9880850.sorted.bam
+Monkeypox	16985	.	C	T	217.714	.	DP=322;VDB=0.000882651;SGB=140.682;RPBZ=-2.6755;MQBZ=0;MQSBZ=0;BQBZ=0.118608;NMBZ=-1.24187;SCBZ=-0.875402;FS=0;MQ0F=0;AC=1;AN=5;DP4=98,135,28,61;MQ=60	GT:PL	0:0,240	0:0,85	0:0,255	1:255,0	0:0,255
+Monkeypox	40801	.	C	T	118.834	.	DP=122;VDB=5.52906e-06;SGB=11.9309;RPBZ=4.63281;MQBZ=0;MQSBZ=0;BQBZ=0.492869;NMBZ=-0.492869;SCBZ=-0.282216;FS=0;MQ0F=0;AC=1;AN=4;DP4=75,38,9,0;MQ=60	GT:PL	1:155,0	.:0,0	0:0,255	0:0,255	0:0,255
+Monkeypox	133094	.	CTTTTTTTTTTTTTTTTTTTTTTTTTTTT	CTTTTTTTTTTTTTTTTTTTTTTTTT,CTTTTTTTTTTTTTTTTTTTTTT	342.47	.	INDEL;IDV=57;IMF=0.375;DP=664;VDB=0.00547646;SGB=-17.2719;RPBZ=-4.86864;MQBZ=2.053;MQSBZ=1.66611;BQBZ=-6.27027;NMBZ=-0.856651;SCBZ=-11.2327;FS=0;MQ0F=0;AC=4,1;AN=5;DP4=15,32,33,50;MQ=59	GT:PL	2:255,246,133	1:255,154,176	1:137,83,171	1:255,255,255	1:219,92,200
+Monkeypox	141141	.	G	A	217.748	.	DP=585;VDB=0.000532478;SGB=151.948;RPBZ=-2.97186;MQBZ=0;MQSBZ=0;BQBZ=0.422897;NMBZ=-0.994156;SCBZ=-0.768753;FS=0;MQ0F=0;AC=1;AN=5;DP4=317,172,58,38;MQ=60	GT:PL	1:255,0	0:0,255	0:0,255	0:0,255	0:0,255
+Monkeypox	146826	.	C	T	59.4255	.	DP=214;VDB=0.91711;SGB=31.2406;RPBZ=-1.18805;MQBZ=0;MQSBZ=0;BQBZ=1.00848;NMBZ=0;SCBZ=0;FS=0;MQ0F=0;AC=1;AN=5;DP4=98,95,5,16;MQ=60	GT:PL	0:0,255	1:255,158	0:0,255	0:0,255	0:0,255
+Monkeypox	173266	.	AATATATATATATATATATATATATATATATATATATATATATATATAT	AATATATATATATATATATATATATATATATATATATATATAT	7.0693	.	INDEL;IDV=5;IMF=0.151515;DP=71;VDB=0.0681597;SGB=0.823243;RPBZ=-3.47952;MQBZ=0.275241;MQSBZ=-0.678233;BQBZ=-3.06486;NMBZ=0.57735;SCBZ=0;FS=0;MQ0F=0;AC=1;AN=2;DP4=0,1,1,2;MQ=60	GT:PL	.:0,0	.:0,0	.:0,0	0:0,51	1:67,32
+Monkeypox	176820	.	G	A	200.703	.	DP=266;VDB=0.182168;SGB=63.4293;RPBZ=0.6682;MQBZ=0;MQSBZ=0;BQBZ=-1.2272;NMBZ=1.35719;SCBZ=0;FS=0;MQ0F=0;AC=1;AN=5;DP4=123,102,26,15;MQ=60	GT:PL	0:0,255	0:0,255	0:0,255	1:255,17	0:0,255
+Monkeypox	181346	.	G	A	111.607	.	DP=984;VDB=1.11696e-05;SGB=187.356;RPBZ=1.05933;MQBZ=0;MQSBZ=0;BQBZ=-10.9959;NMBZ=-0.0859044;SCBZ=-0.369346;FS=0;MQ0F=0;AC=1;AN=5;DP4=529,336,81,37;MQ=60	GT:PL	0:0,255	0:0,255	0:0,255	1:236,87	0:0,255
