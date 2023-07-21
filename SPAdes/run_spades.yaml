@@ -1,0 +1,122 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: ec_start
+- STAGE: Read error correction
+  args:
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/corrected/configs/config.info
+  config_dir: corrected
+  del_after:
+  - tmp/hammer_7qcqmkie
+  output_files:
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/corrected/corrected.yaml
+  path: /home/exouser/Documents/Tools/bin/spades-hammer
+  short_name: ec_runtool
+- STAGE: corrected reads compression
+  args:
+  - /home/exouser/Documents/Tools/share/spades/spades_pipeline/scripts/compress_all.py
+  - --input_file
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/corrected/corrected.yaml
+  - --ext_python_modules_home
+  - /home/exouser/Documents/Tools/share/spades
+  - --max_threads
+  - '16'
+  - --output_dir
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/corrected
+  - --gzip_output
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /usr/bin/python3
+  short_name: ec_compress
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: ec_finish
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K25
+  args:
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/configs/config.info
+  config_dir: K25
+  del_after: []
+  output_files: []
+  path: /home/exouser/Documents/Tools/bin/spades-core
+  short_name: k25
+- STAGE: Copy files
+  args:
+  - /home/exouser/Documents/Tools/share/spades/spades_pipeline/scripts/copy_files.py
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/before_rr.fasta
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/before_rr.fasta
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/assembly_graph_after_simplification.gfa
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/assembly_graph_after_simplification.gfa
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/final_contigs.fasta
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/contigs.fasta
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/first_pe_contigs.fasta
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/first_pe_contigs.fasta
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/strain_graph.gfa
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/strain_graph.gfa
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/scaffolds.fasta
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/scaffolds.fasta
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/scaffolds.paths
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/scaffolds.paths
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/assembly_graph_with_scaffolds.gfa
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/assembly_graph_with_scaffolds.gfa
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/assembly_graph.fastg
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/assembly_graph.fastg
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/final_contigs.paths
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_jbv7j3td
+  output_files: []
+  path: /usr/bin/python3
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /home/exouser/Documents/Tools/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/scaffolds.fasta
+  - --misc_dir
+  - /home/exouser/Documents/Midterm1/Q2/run_25_spades/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /usr/bin/python3
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  output_files: []
+  path: 'true'
+  short_name: terminate

@@ -1,0 +1,12 @@
+set -e
+true
+true
+/home/exouser/Documents/Tools/bin/spades-hammer /home/exouser/Documents/Midterm1/Q2/run_25_spades/corrected/configs/config.info
+/usr/bin/python3 /home/exouser/Documents/Tools/share/spades/spades_pipeline/scripts/compress_all.py --input_file /home/exouser/Documents/Midterm1/Q2/run_25_spades/corrected/corrected.yaml --ext_python_modules_home /home/exouser/Documents/Tools/share/spades --max_threads 16 --output_dir /home/exouser/Documents/Midterm1/Q2/run_25_spades/corrected --gzip_output
+true
+true
+/home/exouser/Documents/Tools/bin/spades-core /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/configs/config.info
+/usr/bin/python3 /home/exouser/Documents/Tools/share/spades/spades_pipeline/scripts/copy_files.py /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/before_rr.fasta /home/exouser/Documents/Midterm1/Q2/run_25_spades/before_rr.fasta /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/assembly_graph_after_simplification.gfa /home/exouser/Documents/Midterm1/Q2/run_25_spades/assembly_graph_after_simplification.gfa /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/final_contigs.fasta /home/exouser/Documents/Midterm1/Q2/run_25_spades/contigs.fasta /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/first_pe_contigs.fasta /home/exouser/Documents/Midterm1/Q2/run_25_spades/first_pe_contigs.fasta /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/strain_graph.gfa /home/exouser/Documents/Midterm1/Q2/run_25_spades/strain_graph.gfa /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/scaffolds.fasta /home/exouser/Documents/Midterm1/Q2/run_25_spades/scaffolds.fasta /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/scaffolds.paths /home/exouser/Documents/Midterm1/Q2/run_25_spades/scaffolds.paths /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/assembly_graph_with_scaffolds.gfa /home/exouser/Documents/Midterm1/Q2/run_25_spades/assembly_graph_with_scaffolds.gfa /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/assembly_graph.fastg /home/exouser/Documents/Midterm1/Q2/run_25_spades/assembly_graph.fastg /home/exouser/Documents/Midterm1/Q2/run_25_spades/K25/final_contigs.paths /home/exouser/Documents/Midterm1/Q2/run_25_spades/contigs.paths
+true
+/usr/bin/python3 /home/exouser/Documents/Tools/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py --result_scaffolds_filename /home/exouser/Documents/Midterm1/Q2/run_25_spades/scaffolds.fasta --misc_dir /home/exouser/Documents/Midterm1/Q2/run_25_spades/misc --threshold_for_breaking_scaffolds 3
+true

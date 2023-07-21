@@ -1,0 +1,7 @@
+- "left reads":
+  - "/home/exouser/Documents/Midterm1/Q2/ERR10123851_1.fastq"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/home/exouser/Documents/Midterm1/Q2/ERR10123851_2.fastq"
+  "type": "paired-end"
